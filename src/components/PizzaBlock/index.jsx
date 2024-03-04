@@ -45,7 +45,7 @@ function PizzaBlock(props) {
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {props.price} ₽</div>
         <button
-          onClick={addPizza}
+          onClick={() => addPizza()}
           className="button button--outline button--add"
         >
           <svg
