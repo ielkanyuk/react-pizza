@@ -2,16 +2,9 @@ import logo from "./logo.svg";
 import "./scss/app.scss";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 import NotFound from "./pages/NotFound";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-    errorElement: <NotFound />,
-  },
-]);
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -19,7 +12,11 @@ function App() {
       <Header />
       <div className="content">
         <div className="container">
-          <RouterProvider router={router} />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
         </div>
       </div>
     </div>
